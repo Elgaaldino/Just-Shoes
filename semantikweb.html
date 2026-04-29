@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Just Shoes</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(to bottom, #ffffff 80%, #fff4e6 100%);
+    color: #000000;
+  }
+
+  header {
+    background-color: #ff6600;
+    color: #ffffff;
+    padding: 40px 80px;
+    text-align: center;
+    border-bottom: 2px solid #777;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  .logo-container img {
+    height: 80px;
+    margin-right: 20px;
+    filter: drop-shadow(0 0 5px #000);
+    border-radius: 30px;
+    border: 3px solid #ffffff;
+    padding: 5px;
+    background-color: #ff6600;
+  }
+
+  nav {
+    background-color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #555;
+  }
+
+  nav a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0 25px;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #ff6600;
+  }
+
+  main {
+    padding: 30px;
+  }
+
+  h1 { margin-bottom: 30px; }
+  h2 {
+    font-weight: 700;
+    padding-left: 10px;
+    color: #000000;
+    margin-bottom: 15px;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  article {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(255, 165, 0, 0.3);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  figure img {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #ff6600;
+  }
+
+  figcaption { font-style: italic; margin-top: 8px; }
+
+  .btn-pesan {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .btn-pesan:hover { background-color: #cc5200; }
+
+  #formulir {
+    display: none;
+    background-color: #fff4e6;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 10px;
+    max-width: 500px;
+  }
+
+  #formulir label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  #formulir input, #formulir textarea, #formulir select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+  }
+
+  #formulir input[type="submit"] {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  #formulir input[type="submit"]:hover { background-color: #cc5200; }
+
+  footer {
+    background-color: #ff6600;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #777;
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo-container">
+    <img src="logo toko.jpg" alt="Logo Toko Sepatu" />
+  </div>
+  <h1>Just Shoes</h1>
+  <p>Gaya Kalem, Aura Kenceng</p>
+</header>
+
+<nav>
+  <a href="#produk">Produk</a>
+  <a href="#kontak">Kontak</a>
+  <a href="#formulir" id="navFormLink" style="display:none;">Formulir</a>
+</nav>
+
+<main>
+  <section id="produk">
+    <h2>Produk Unggulan</h2>
+    <div class="product-grid">
+      <article>
+        <h3>Nike Air Ship Pine Green</h3>
+        <figure>
+          <img src="nike hijau.jpg" alt="Nike Air Ship Pine Green sneakers" />
+          <figcaption>Sneakers klasik dengan sentuhan warna hijau pine</figcaption>
+        </figure>
+        <p>Harga: Rp 2.500.000</p>
+        <button class="btn-pesan" data-produk="Nike Air Ship Pine Green">Pesan</button>
+      </article>
+
+      <article>
+        <h3>Adidas Samba</h3>
+        <figure>
+          <img src="adidas samba.jpg" alt="Adidas Samba sneakers" />
+          <figcaption>Sneakers legendaris dengan gaya retro</figcaption>
+        </figure>
+        <p>Harga: Rp 1.800.000</p>
+        <button class="btn-pesan" data-produk="Adidas Samba">Pesan</button>
+      </article>
+
+      <article>
+        <h3>Converse Chuck Taylor</h3>
+        <figure>
+          <img src="converse.jpg" alt="Converse Chuck Taylor sneakers" />
+          <figcaption>Sneakers klasik sepanjang masa</figcaption>
+        </figure>
+        <p>Harga: Rp 1.200.000</p>
+        <button class="btn-pesan" data-produk="Converse Chuck Taylor">Pesan</button>
+      </article>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <h2>Kontak Toko</h2>
+    <address>
+      <p><strong>Telepon:</strong> +62-812-3456-7890</p>
+      <p><strong>Alamat:</strong> Jl. Raya Sepatu No. 123, Malang</p>
+      <p><strong>Website:</strong> <a href="https://tokosepatumodern.com" target="_blank">tokosepatumodern.com</a></p>
+    </address>
+  </section>
+
+  <section id="formulir">
+    <h2>Formulir Pemesanan</h2>
+    <form id="contactForm" action="proses/simpan_pesanan.php" method="POST">
+      <label for="produkPilih">Produk yang Dipesan:</label>
+      <input type="text" id="produkPilih" name="produkPilih" readonly />
+
+      <label for="name">Nama:</label>
+      <input type="text" id="name" name="name" required placeholder="Masukkan nama Anda" />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required placeholder="Masukkan email Anda" />
+
+      <label for="jumlah">Jumlah Pesanan:</label>
+      <input type="number" id="jumlah" name="jumlah" min="1" required placeholder="Masukkan jumlah pesanan" />
+
+      <label for="size">Ukuran Sepatu:</label>
+      <select id="size" name="size" required>
+        <option value="" disabled selected>Pilih ukuran</option>
+        <option value="38">38</option>
+        <option value="39">39</option>
+        <option value="40">40</option>
+        <option value="41">41</option>
+        <option value="42">42</option>
+        <option value="43">43</option>
+        <option value="44">44</option>
+      </select>
+
+      <label for="alamat">Alamat Pengiriman:</label>
+      <textarea id="alamat" name="alamat" rows="3" required placeholder="Masukkan alamat pengiriman"></textarea>
+
+      <label for="transaksi">Metode Transaksi:</label>
+      <select id="transaksi" name="transaksi" required>
+        <option value="" disabled selected>Pilih metode transaksi</option>
+        <option value="transfer-bank">Transfer Bank</option>
+        <option value="cash-on-delivery">Cash on Delivery</option>
+        <option value="e-wallet">E-Wallet</option>
+        <option value="kartu-kredit">Kartu Kredit</option>
+      </select>
+
+      <label for="message">Pesan:</label>
+      <textarea id="message" name="message" required placeholder="Tulis pesan Anda di sini" rows="5"></textarea>
+
+      <input type="submit" value="Kirim Pesan" />
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 Toko Sepatu Modern</p>
+</footer>
+<script>
+  // Tangkap semua tombol "Pesan"
+  const tombolPesan = document.querySelectorAll('.btn-pesan');
+  const formSection = document.getElementById('formulir');
+  const produkPilihInput = document.getElementById('produkPilih');
+  const navFormLink = document.getElementById('navFormLink');
+
+  tombolPesan.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const produk = btn.getAttribute('data-produk');
+      formSection.style.display = 'block';
+      produkPilihInput.value = produk;
+      navFormLink.style.display = 'inline';
+      formSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
